@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      // Instead of removing and re-adding content, use a class to toggle visibility
+      document.getElementById("myDiv").classList.add("hidden");
+      setTimeout(function(){
+        document.getElementById("myDiv").classList.remove("hidden");
+        document.getElementById("myDiv").textContent = "This text is visible after a delay.";
+      }, 3000);
+    }
+  </script>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</body>
+</html>
